@@ -9,21 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
     @State var alertIsVisible: Bool = false
     
     var body: some View {
         VStack {
             
+            Spacer()
             HStack {
-                Text("Hello world")
+                Text("Put the Bull's Eye as close as you can to:").tracking(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Tracking@*/1.0/*@END_MENU_TOKEN@*/)
+                Text("100")
             }
-            
+            Spacer()
+            HStack {
+                Text("1")
+                Slider(value: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant(10)/*@END_MENU_TOKEN@*/)
+                Text("100")
+            }
+            Spacer()
             Button(action: {
                 print("YES")
                 self.alertIsVisible = true
             }) {
-                Text("Hit me!")
+                Text("Hit Me!")
             }
                 
             .alert(isPresented: $alertIsVisible) { () -> Alert in
@@ -33,13 +41,30 @@ struct ContentView: View {
                 let dismissButton = Alert.Button.default(dismissButtonTitle)
                 return Alert(title: title, message: message, dismissButton: dismissButton)
             }
+            Spacer()
+            HStack {
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Start Over")
+                }
+                Spacer()
+                Text("Score:")
+                Text("0")
+                Spacer()
+                Text("Round:")
+                Text("1")
+                Spacer()
+                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                    Text("Info")
+                }
+            }
+            .padding(.bottom, 20)
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().previewLayout(.fixed(width: 896, height: 414))
     }
 }
 
