@@ -9,20 +9,29 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+
     @State var alertIsVisible: Bool = false
     
     var body: some View {
         VStack {
-            Text("Hello World")
+            
+            HStack {
+                Text("Hello world")
+            }
+            
             Button(action: {
                 print("YES")
                 self.alertIsVisible = true
             }) {
                 Text("Hit me!")
             }
+                
             .alert(isPresented: $alertIsVisible) { () -> Alert in
-                return Alert(title: Text("Hello"), message: Text("You are good"), dismissButton: .default(Text("OK")))
+                let title = Text("Hello")
+                let dismissButtonTitle = Text("OK")
+                let message = Text("You are good")
+                let dismissButton = Alert.Button.default(dismissButtonTitle)
+                return Alert(title: title, message: message, dismissButton: dismissButton)
             }
         }
     }
@@ -33,3 +42,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
