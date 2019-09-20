@@ -36,12 +36,15 @@ struct ContentView: View {
             }
                 
             .alert(isPresented: $alertIsVisible) { () -> Alert in
+                var roundedValue = Int(sliderValue.rounded())
                 let title = Text("Hello")
+                let message = Text("The slider's value is \(roundedValue)")
                 let dismissButtonTitle = Text("OK")
-                let message = Text("You are good")
                 let dismissButton = Alert.Button.default(dismissButtonTitle)
+                
                 return Alert(title: title, message: message, dismissButton: dismissButton)
             }
+            
             Spacer()
             HStack {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
