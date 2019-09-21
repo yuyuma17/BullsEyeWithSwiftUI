@@ -18,7 +18,7 @@ struct ContentView: View {
             
             Spacer()
             HStack {
-                Text("Put the Bull's Eye as close as you can to:").tracking(/*@START_MENU_TOKEN@*/ /*@PLACEHOLDER=Tracking@*/1.0/*@END_MENU_TOKEN@*/)
+                Text("Put the Bull's Eye as close as you can to:").allowsTightening(true)
                 Text("100")
             }
             Spacer()
