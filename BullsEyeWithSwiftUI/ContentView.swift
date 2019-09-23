@@ -47,7 +47,9 @@ struct ContentView: View {
             
             Spacer()
             HStack {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    
+                }) {
                     Text("Start Over")
                 }
                 Spacer()
@@ -57,7 +59,9 @@ struct ContentView: View {
                 Text("Round:")
                 Text("1")
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                Button(action: {
+                    
+                }) {
                     Text("Info")
                 }
             }
