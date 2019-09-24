@@ -65,13 +65,12 @@ struct ContentView: View {
                 Text("Round:")
                 Text("\(round)")
                 Spacer()
-                Button(action: {
-                    
-                }) {
+                NavigationLink(destination: AboutView()) {
                     Text("Info")
                 }
             }
             .padding(.bottom, 20)
+        .navigationBarTitle("Bull's eye")
         }
     }
     
