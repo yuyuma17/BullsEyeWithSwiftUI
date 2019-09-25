@@ -70,7 +70,7 @@ struct ContentView: View {
             Spacer()
             HStack {
                 Text("1").modifier(ValueStyle())
-                Slider(value: $sliderValue, in: 1...100)
+                Slider(value: $sliderValue, in: 1...100).accentColor(Color.green)
                 Text("100").modifier(ValueStyle())
             }
             Spacer()
