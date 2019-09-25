@@ -18,7 +18,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            
             Spacer()
             HStack {
                 Text("Put the Bull's Eye as close as you can to:").allowsTightening(true)
@@ -47,7 +46,6 @@ struct ContentView: View {
                     self.round = self.round + 1
                     self.sliderValue = 50.0
                 }
-                
                 return Alert(title: Text(alertTitle()), message: message, dismissButton: dismissButton)
             }
             
@@ -94,7 +92,7 @@ struct ContentView: View {
     }
     
     func alertTitle() -> String {
-        let difference = 100 - abs(targetValue - sliderValueRounded())
+        let difference = abs(targetValue - sliderValueRounded())
         let title: String
         
         if difference == 0 {
