@@ -7,6 +7,6 @@ If you are also interested in this, you can go [Raywenderlich.com](https://www.r
 
 ## Demo - BullsEyeWithSwiftUI
 
-<img src="https://github.com/yuyuma17/Raywenderlich-CoursePractice/blob/master/BullsEye/Demo/d1.png?raw=true" width="430" height="300"> <img src="https://github.com/yuyuma17/Raywenderlich-CoursePractice/blob/master/BullsEye/Demo/d2.png?raw=true" width="430" height="300">
+<img src="https://github.com/yuyuma17/BullsEyeWithSwiftUI/blob/master/Demo/d1.png?raw=true" width="430" height="300"> <img src="https://github.com/yuyuma17/BullsEyeWithSwiftUI/blob/master/Demo/d2.png?raw=true" width="430" height="300">
 
 
