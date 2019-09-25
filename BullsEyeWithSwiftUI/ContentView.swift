@@ -16,18 +16,45 @@ struct ContentView: View {
     @State var score = 0
     @State var round = 1
     
+    struct TextStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.white)
+                .modifier(Shadow())
+                .font(Font.custom("Arial Rounded MT Bold", size: 18))
+        }
+    }
+    
+    struct ValueStyle: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .foregroundColor(Color.yellow)
+                .modifier(Shadow())
+                .font(Font.custom("Arial Rounded MT Bold", size: 24))
+        }
+    }
+    
+    struct Shadow: ViewModifier {
+        func body(content: Content) -> some View {
+            return content
+                .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+        }
+    }
+    
     var body: some View {
         VStack {
             Spacer()
             HStack {
-                Text("Put the Bull's Eye as close as you can to:").allowsTightening(true)
-                Text("\(targetValue)")
+                Text("Put the Bull's Eye as close as you can to:")
+                    .allowsTightening(true)
+                    .modifier(TextStyle())
+                Text("\(targetValue)").modifier(ValueStyle())
             }
             Spacer()
             HStack {
-                Text("1")
+                Text("1").modifier(ValueStyle())
                 Slider(value: $sliderValue, in: 1...100)
-                Text("100")
+                Text("100").modifier(ValueStyle())
             }
             Spacer()
             Button(action: {
@@ -57,19 +84,20 @@ struct ContentView: View {
                     Text("Start Over")
                 }
                 Spacer()
-                Text("Score:")
-                Text("\(score)")
+                Text("Score:").modifier(TextStyle())
+                Text("\(score)").modifier(ValueStyle())
                 Spacer()
-                Text("Round:")
-                Text("\(round)")
+                Text("Round:").modifier(TextStyle())
+                Text("\(round)").modifier(ValueStyle())
                 Spacer()
                 NavigationLink(destination: AboutView()) {
                     Text("Info")
                 }
             }
             .padding(.bottom, 20)
-        .navigationBarTitle("Bull's eye")
+            .navigationBarTitle("Bull's eye")
         }
+        .background(Image("Background"), alignment: .center)
     }
     
     func sliderValueRounded() -> Int {
