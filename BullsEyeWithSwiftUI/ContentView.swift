@@ -94,7 +94,7 @@ struct ContentView: View {
                 }
                 return Alert(title: Text(alertTitle()), message: message, dismissButton: dismissButton)
             }
-            .background(Image("Button")).modifier(Shadow())
+            .background(Image("Button").renderingMode(.original)).modifier(Shadow())
             
             Spacer()
             HStack {
@@ -106,7 +106,7 @@ struct ContentView: View {
                         Text("Start Over").modifier(ButtonSmallTextStyle())
                     }
                 }
-                .background(Image("Button")).modifier(Shadow())
+                .background(Image("Button").renderingMode(.original)).modifier(Shadow())
                 
                 Spacer()
                 Text("Score:").modifier(TextStyle())
@@ -121,7 +121,7 @@ struct ContentView: View {
                         Text("Info").modifier(ButtonSmallTextStyle())
                     }
                 }
-                .background(Image("Button")).modifier(Shadow())
+                .background(Image("Button").renderingMode(.original)).modifier(Shadow())
             }
             .padding(.bottom, 30)
             .padding(.trailing,45)
