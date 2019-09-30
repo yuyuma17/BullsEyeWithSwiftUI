@@ -73,6 +73,8 @@ struct ContentView: View {
                 Slider(value: $sliderValue, in: 1...100).accentColor(Color.green)
                 Text("100").modifier(ValueStyle())
             }
+            .padding(.leading,20)
+            .padding(.trailing,20)
             Spacer()
             Button(action: {
                 self.alertIsVisible = true
@@ -121,7 +123,9 @@ struct ContentView: View {
                 }
                 .background(Image("Button")).modifier(Shadow())
             }
-            .padding(.bottom, 20)
+            .padding(.bottom, 30)
+            .padding(.trailing,45)
+            .padding(.leading,40)
             .navigationBarTitle("Bull's eye")
         }
         .background(Image("Background"), alignment: .center)

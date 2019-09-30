@@ -37,7 +37,7 @@ struct AboutView: View {
         Group {
             VStack {
                 Text("🎯Bull's Eye🎯").modifier(AboutHeadingStyle())
-                Text("This is Bull's Eye, the game where you can win points and earn fame by dragging a slider.").modifier(AboutBodyStyle())
+                Text("This is Bull's Eye, the game where you can win points and earn fame by dragging a slider.").modifier(AboutBodyStyle()).minimumScaleFactor(0.8)
                 Text("Your goal is to place the slider as close as possible to the target value. The closer you are, the more points you score.").modifier(AboutBodyStyle()).minimumScaleFactor(0.8)
                 Text("Enjoy!").modifier(AboutBodyStyle())
             }
